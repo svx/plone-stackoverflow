@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Plone - Stack Overflow - Statistics</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+      /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+      .row.content {
+        height: 1500px;
+      }
+
+      /* Set gray background color and 100% height */
+      .sidenav {
+        background-color: #f1f1f1;
+        height: 100%;
+      }
+
+      /* Set black background color, white text and some padding */
+      footer {
+        background-color: #555;
+        color: white;
+        padding: 15px;
+      }
+
+      /* On small screens, set height to 'auto' for sidenav and grid */
+      @media screen and (max-width: 767px) {
+        .sidenav {
+          height: auto;
+          padding: 15px;
+        }
+        .row.content {
+          height: auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row content">
+        <div class="col-sm-3 sidenav">
+          <!-- <h4>John's Blog</h4> -->
+          <!-- <ul class="nav nav-pills nav-stacked"> -->
+            <br>
+            <img src="images/stack-overflow-logo.png" alt="">
+            <br><br>
+            <p>Statistics for <a href="https://stackoverflow.com/questions/tagged/plone+or+plone-5.x+or+zope">Plone tags on Stack Overflow</a><br><br>
+              Remaining requests for you today: <span id="remaining-requests"></span>
+            </p>
+            <!-- <li class="active"><a href="#section1">Home</a></li>
+            <li><a href="#section2">Friends</a></li>
+            <li><a href="#section3">Family</a></li>
+            <li><a href="#section3">Photos</a></li> -->
+          <!-- </ul> -->
+          <br />
+          <!-- <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search Blog.."
+            />
+
+          </div> -->
+        </div>
+        <div class="col-sm-9">
+          <h2>Overview</h2>
+          <hr />
+          <div>
+              <form id="selection-form">
+                  <label for="stack-overflow-tag">Tag:</label>
+                  <select id="stack-overflow-tag">
+                      <option value="plone" selected>Plone</option>
+                      <option value="plone-5.x">Plone 5</option>
+                      <option value="zope">Zope</option>
+                  </select>
+
+                  <label for="start-date">Dates</label>
+                  <input type="date" id="start-date" value="2014-04-01">
+                  <input type="date" id="end-date" value="2019-08-10">
+
+                  <label for="time-period">Period</label>
+                  <select id="time-period">
+                      <option value="month" selected>Month</option>
+                      <option value="all_time">All time</option>
+                  </select>
+
+                  <input type="submit" id="check-reports" value="Check">
+              </form>
+          </div>
+
+          <div id="results">
+              <section>
+                  <h2>Questions (based on dates above)</h2>
+                  <table>
+                      <tr>
+                          <th>With activity</th>
+                          <td id="questions-with-activity"></td>
+                      </tr>
+                      <tr>
+                          <th>Unanswered *</th>
+                          <td id="unanswered-questions"></td>
+                      </tr>
+                      <tr>
+                          <th>Results</th>
+                          <td><span id="questions-results">100</span>% unanswered</td>
+                      </tr>
+                      <tr>
+                          <td colspan="2">* = (must have at least one upvoted answer to be considered answered)</td>
+                      </tr>
+                  </table>
+              </section>
+
+              <section>
+                  <h2>Top answerers (based on time period above)</h2>
+                  <div id="top-answerers"></div>
+              </section>
+
+              <section>
+                  <h2>Unanswered questions *</h2>
+                  <div id="unanswered"></div>
+              </section>
+
+              <section>
+                  <h2>Frequently asked questions</h2>
+                  <div id="faq"></div>
+              </section>
+
+              <section>
+                  <h2>Related tags</h2>
+                  <div id="related-tags"></div>
+              </section>
+
+              <section>
+                  <h2>Top askers (based on time period above)</h2>
+                  <div id="top-askers"></div>
+              </section>                
+          </div>
+      </div>
+
+          
+          <br /><br />
+
+
+          
+          <hr />
+
+          <br /><br />
+        </div>
+      </div>
+    </div>
+
+    <footer class="container-fluid">
+      <p>Based on <a href="https://github.com/groovecoder/mozilla-stackoverflow">mozilla-stackoverflow</a></p>
+    </footer>
+    <script type="text/javascript" src="js/base.js"></script>
+  </body>
+</html>
